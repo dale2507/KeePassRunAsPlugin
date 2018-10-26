@@ -14,7 +14,7 @@ This is the repository for the Run As plugin for the [KeePass Password Safe](htt
 
 ## Usage ##
 
-This page is for developer documentation. For how to use the plugin, see the [User Documentation](.\docs\README.md).
+This page is for developer documentation. For how to use the plugin, see the [User Documentation](docs/README.md).
 
 ## Development Requirements ##
 
@@ -50,4 +50,4 @@ TBC
 
 ## Special Thanks ##
 
-See the [thanks page](.\THANKS.md).
+See the [thanks page](THANKS.md).

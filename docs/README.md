@@ -5,7 +5,7 @@ The KeePass Impersonation Plugin (aka KeePass RunAs Plugin) was developed to hel
 The main use cases for this are:
 
 * network admins who may need to run some applications as privileged users or,
-* VPN users who's local account details are different from those they need to use to connect. [More Details...](.\UseCaseVPN.md)
+* VPN users who's local account details are different from those they need to use to connect. [More Details...](UseCaseVPN.md)
 
 ## Requirements ##
 
@@ -19,8 +19,8 @@ There are currently no plans to support operating systems other than Windows but
 
 ## Setup ##
 
-There is only one configuration option for the plugin at the moment which is to have one password entry per application. You can learn about this on the [Setup Instructions Page](.\SetupEntryPerApplication.md).
+There is only one configuration option for the plugin at the moment which is to have one password entry per application. You can learn about this on the [Setup Instructions Page](SetupEntryPerApplication.md).
 
 ## Special Thanks ##
 
-See the [thanks page](..\THANKS.md).
+See the [thanks page](../THANKS.md).

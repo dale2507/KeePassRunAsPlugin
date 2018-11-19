@@ -101,7 +101,9 @@ namespace RunAsPlugin.SafeManagement
             {
                 FullUsername = this.GetString(FieldNames.Username, true),
                 Password = this.entryStrings.Get(FieldNames.Password),
-                NetOnly = this.GetBool(FieldNames.RunAs.NetOnly)
+                NetOnly = this.GetBool(FieldNames.RunAs.NetOnly),
+                Application = this.GetString(FieldNames.RunAs.Application, true),
+                Arguments = this.GetString(FieldNames.RunAs.Arguments, true)
             };
         }
 

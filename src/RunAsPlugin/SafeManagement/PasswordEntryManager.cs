@@ -58,12 +58,14 @@ namespace RunAsPlugin.SafeManagement
         {
             bool isEnabled = this.GetBool(FieldNames.RunAs.IsEnabled);
             string application = this.GetString(FieldNames.RunAs.Application, false);
+            string arguments = this.GetString(FieldNames.RunAs.Arguments, true);
             bool isNetOnly = this.GetBool(FieldNames.RunAs.NetOnly);
 
             return new RunAsEntrySettings()
             {
                 IsEnabled = isEnabled,
                 Application = application,
+                Arguments = arguments,
                 IsNetOnly = isNetOnly
             };
         }
@@ -76,6 +78,7 @@ namespace RunAsPlugin.SafeManagement
         {
             this.SetString(FieldNames.RunAs.IsEnabled, settings.IsEnabled);
             this.SetString(FieldNames.RunAs.Application, settings.Application);
+            this.SetString(FieldNames.RunAs.Arguments, settings.Arguments);
             this.SetString(FieldNames.RunAs.NetOnly, settings.IsNetOnly);
         }
 

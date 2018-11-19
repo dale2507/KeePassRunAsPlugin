@@ -8,7 +8,7 @@ namespace RunAsPlugin.Execution.Impersonation
 {
     internal class NativeCallImpersonationHandler : IImpersonationHandler
     {
-        public void ExecuteApplication(string application, PasswordEntryManager entryManager)
+        public void ExecuteApplication(string application, string arguments, PasswordEntryManager entryManager)
         {
             ExecutionSettings settings = entryManager.GetExecutionSettings();
 
@@ -33,7 +33,7 @@ namespace RunAsPlugin.Execution.Impersonation
                     entryManager.ProcessReplacementTags(settings.Password),
                     (uint)logonFlags,
                     application,
-                    null,
+                    arguments,
                     0,
                     IntPtr.Zero,
                     null,

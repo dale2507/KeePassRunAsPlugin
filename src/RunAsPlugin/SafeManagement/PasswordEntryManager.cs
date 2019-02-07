@@ -78,11 +78,11 @@ namespace RunAsPlugin.SafeManagement
         /// <param name="settings">The run as settings for the entry.</param>
         internal void SetRunAsSettings(RunAsEntrySettings settings)
         {
-            this.SetString(FieldNames.RunAs.IsEnabled, settings.IsEnabled);
+            this.SetString(FieldNames.RunAs.IsEnabled, settings.IsEnabled, default(bool).ToString());
             this.SetString(FieldNames.RunAs.Application, settings.Application);
             this.SetString(FieldNames.RunAs.Arguments, settings.Arguments);
             this.SetString(FieldNames.RunAs.WorkingDir, settings.WorkingDir);
-            this.SetString(FieldNames.RunAs.NetOnly, settings.IsNetOnly);
+            this.SetString(FieldNames.RunAs.NetOnly, settings.IsNetOnly, default(bool).ToString());
         }
 
         /// <summary>
@@ -116,10 +116,17 @@ namespace RunAsPlugin.SafeManagement
         /// </summary>
         /// <param name="field">The name of the string field.</param>
         /// <param name="value">The value of the string field.</param>
-        private void SetString(string field, object value)
+        private void SetString(string field, object value, string defaultValue = "")
         {
-            ProtectedString protectedString = new ProtectedString(false, value.ToString());
-            this.entryStrings.Set(field, protectedString);
+            if (defaultValue.Equals(value.ToString(), System.StringComparison.InvariantCultureIgnoreCase))
+            {
+                this.entryStrings.Remove(field);
+            }
+            else
+            {
+                ProtectedString protectedString = new ProtectedString(false, value.ToString());
+                this.entryStrings.Set(field, protectedString);
+            }
         }
 
         public string ProcessReplacementTags(ProtectedString protectedString)
